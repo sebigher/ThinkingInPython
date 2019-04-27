@@ -8,5 +8,6 @@ def my_function(response):
     print("continuing...")
     return val
 
+
 print(my_function("no"))
 print(my_function("yes"))

@@ -3,14 +3,18 @@
 
 class Borg:
     _shared_state = {}
+
     def __init__(self):
         self.__dict__ = self._shared_state
+
 
 class Singleton(Borg):
     def __init__(self, arg):
         Borg.__init__(self)
         self.val = arg
+
     def __str__(self): return self.val
+
 
 x = Singleton('sausage')
 print(x)
@@ -20,9 +24,9 @@ z = Singleton('spam')
 print(z)
 print(x)
 print(y)
-print(`x`)
-print(`y`)
-print(`z`)
+print(repr(x))
+print(repr(y))
+print(repr(z))
 output = '''
 sausage
 eggs
